@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>210</ID>
+      <Description>"Player Scripts"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"Inf. Health"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+aobscanmodule(infHealth,Cyberpunk2077.exe,8B 85 90 01 00 00 41 89)
+alloc(newmem,$1000,"Cyberpunk2077.exe"+195332A)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  pushf
+  cmp [rbp+178],0
+  je @f
+  mov eax,[rbp+188]
+  mov [rbp+190],eax
+  @@:
+  popf
+  mov eax,[rbp+00000190]
+  jmp return
+
+infHealth:
+  jmp newmem
+  nop
+return:
+registersymbol(infHealth)
+
+[DISABLE]
+
+infHealth:
+  db 8B 85 90 01 00 00
+
+unregistersymbol(infHealth)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Cyberpunk2077.exe"+195332A
+
+"Cyberpunk2077.exe"+19532E6: 0F 85 54 FF FF FF        -  jne Cyberpunk2077.exe+1953240
+"Cyberpunk2077.exe"+19532EC: 48 8B 85 78 01 00 00     -  mov rax,[rbp+00000178]
+"Cyberpunk2077.exe"+19532F3: 48 8B 9C 24 80 00 00 00  -  mov rbx,[rsp+00000080]
+"Cyberpunk2077.exe"+19532FB: 49 89 86 78 01 00 00     -  mov [r14+00000178],rax
+"Cyberpunk2077.exe"+1953302: 48 8B 85 80 01 00 00     -  mov rax,[rbp+00000180]
+"Cyberpunk2077.exe"+1953309: 49 89 86 80 01 00 00     -  mov [r14+00000180],rax
+"Cyberpunk2077.exe"+1953310: 8B 85 88 01 00 00        -  mov eax,[rbp+00000188]
+"Cyberpunk2077.exe"+1953316: 41 89 86 88 01 00 00     -  mov [r14+00000188],eax
+"Cyberpunk2077.exe"+195331D: 8B 85 8C 01 00 00        -  mov eax,[rbp+0000018C]
+"Cyberpunk2077.exe"+1953323: 41 89 86 8C 01 00 00     -  mov [r14+0000018C],eax
+// ---------- INJECTING HERE ----------
+"Cyberpunk2077.exe"+195332A: 8B 85 90 01 00 00        -  mov eax,[rbp+00000190]
+// ---------- DONE INJECTING  ----------
+"Cyberpunk2077.exe"+1953330: 41 89 86 90 01 00 00     -  mov [r14+00000190],eax
+"Cyberpunk2077.exe"+1953337: 8B 85 94 01 00 00        -  mov eax,[rbp+00000194]
+"Cyberpunk2077.exe"+195333D: 41 89 86 94 01 00 00     -  mov [r14+00000194],eax
+"Cyberpunk2077.exe"+1953344: 8B 85 98 01 00 00        -  mov eax,[rbp+00000198]
+"Cyberpunk2077.exe"+195334A: 41 89 86 98 01 00 00     -  mov [r14+00000198],eax
+"Cyberpunk2077.exe"+1953351: 0F B6 85 9C 01 00 00     -  movzx eax,byte ptr [rbp+0000019C]
+"Cyberpunk2077.exe"+1953358: 41 88 86 9C 01 00 00     -  mov [r14+0000019C],al
+"Cyberpunk2077.exe"+195335F: 0F B6 85 9D 01 00 00     -  movzx eax,byte ptr [rbp+0000019D]
+"Cyberpunk2077.exe"+1953366: 41 88 86 9D 01 00 00     -  mov [r14+0000019D],al
+"Cyberpunk2077.exe"+195336D: 0F B6 85 9E 01 00 00     -  movzx eax,byte ptr [rbp+0000019E]
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Inf. Ammo"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : Cyberpunk2077.exe
+  Version: 
+  Date   : 2020-12-12
+  Author : Versallius
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(infAmmo,Cyberpunk2077.exe,75 7F 48 8D 8E 28 03 00 00) // should be unique
+alloc(newmem,$1000,"Cyberpunk2077.exe"+1A7E3E5)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jmp Cyberpunk2077.exe+1A7E466
+  lea rcx,[rsi+00000328]
+  jmp return
+
+infAmmo:
+  jmp newmem
+  nop 4
+return:
+registersymbol(infAmmo)
+
+[DISABLE]
+
+infAmmo:
+  db 75 7F 48 8D 8E 28 03 00 00
+
+unregistersymbol(infAmmo)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "Cyberpunk2077.exe"+1A7E3E5
+
+"Cyberpunk2077.exe"+1A7E3B5: 48 8B 86 00 02 00 00     -  mov rax,[rsi+00000200]
+"Cyberpunk2077.exe"+1A7E3BC: 48 89 45 C0              -  mov [rbp-40],rax
+"Cyberpunk2077.exe"+1A7E3C0: 0F B6 9E 44 03 00 00     -  movzx ebx,byte ptr [rsi+00000344]
+"Cyberpunk2077.exe"+1A7E3C7: 49 8B CF                 -  mov rcx,r15
+"Cyberpunk2077.exe"+1A7E3CA: 4C 89 A4 24 18 03 00 00  -  mov [rsp+00000318],r12
+"Cyberpunk2077.exe"+1A7E3D2: E8 59 E6 FE FF           -  call Cyberpunk2077.exe+1A6CA30
+"Cyberpunk2077.exe"+1A7E3D7: 0F B7 F8                 -  movzx edi,ax
+"Cyberpunk2077.exe"+1A7E3DA: 66 85 C0                 -  test ax,ax
+"Cyberpunk2077.exe"+1A7E3DD: 0F 84 45 02 00 00        -  je Cyberpunk2077.exe+1A7E628
+"Cyberpunk2077.exe"+1A7E3E3: 84 DB                    -  test bl,bl
+// ---------- INJECTING HERE ----------
+"Cyberpunk2077.exe"+1A7E3E5: 75 7F                    -  jne Cyberpunk2077.exe+1A7E466
+"Cyberpunk2077.exe"+1A7E3E7: 48 8D 8E 28 03 00 00     -  lea rcx,[rsi+00000328]
+// ---------- DONE INJECTING  ----------
+"Cyberpunk2077.exe"+1A7E3EE: E8 9D F1 FF 00           -  call Cyberpunk2077.exe+2A7D590
+"Cyberpunk2077.exe"+1A7E3F3: 0F B7 8E 40 03 00 00     -  movzx ecx,word ptr [rsi+00000340]
+"Cyberpunk2077.exe"+1A7E3FA: 66 3B CF                 -  cmp cx,di
+"Cyberpunk2077.exe"+1A7E3FD: 66 0F 46 F9              -  cmovbe di,cx
+"Cyberpunk2077.exe"+1A7E401: 66 2B CF                 -  sub cx,di
+"Cyberpunk2077.exe"+1A7E404: 44 0F B7 E1              -  movzx r12d,cx
+"Cyberpunk2077.exe"+1A7E408: 48 8B 8E 98 03 00 00     -  mov rcx,[rsi+00000398]
+"Cyberpunk2077.exe"+1A7E40F: 41 8B D4                 -  mov edx,r12d
+"Cyberpunk2077.exe"+1A7E412: E8 49 39 FE FF           -  call Cyberpunk2077.exe+1A61D60
+"Cyberpunk2077.exe"+1A7E417: 44 89 A6 40 03 00 00     -  mov [rsi+00000340],r12d
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>281</ID>
+          <Description>"No Recoil"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(norecoil,Cyberpunk2077.exe,41 FF ?? 08 4? 8B ?? 24 ?? 02 ?? ?? 48 85 C0 0F 84 ?? ?? ?? ?? 48)
+norecoil:
+  db 48 31 C0 90
+registersymbol(norecoil)
+
+[DISABLE]
+norecoil:
+  db 41 FF 50 08
+unregistersymbol(norecoil)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+2CA4B5D
+
+Cyberpunk2077.exe+2CA4B30: E8 5B 93 57 FD           - call Cyberpunk2077.exe+21DE90
+Cyberpunk2077.exe+2CA4B35: 0F B7 86 F0 00 00 00     - movzx eax,word ptr [rsi+000000F0]
+Cyberpunk2077.exe+2CA4B3C: 41 FF C4                 - inc r12d
+Cyberpunk2077.exe+2CA4B3F: 44 3B E0                 - cmp r12d,eax
+Cyberpunk2077.exe+2CA4B42: 0F 82 68 FC FF FF        - jb Cyberpunk2077.exe+2CA47B0
+Cyberpunk2077.exe+2CA4B48: 48 8B 9F 18 02 00 00     - mov rbx,[rdi+00000218]
+Cyberpunk2077.exe+2CA4B4F: E8 DC 00 77 FE           - call Cyberpunk2077.exe+1414C30
+Cyberpunk2077.exe+2CA4B54: 4C 8B 03                 - mov r8,[rbx]
+Cyberpunk2077.exe+2CA4B57: 48 8B D0                 - mov rdx,rax
+Cyberpunk2077.exe+2CA4B5A: 48 8B CB                 - mov rcx,rbx
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+2CA4B5D: 41 FF 50 08              - call qword ptr [r8+08]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+2CA4B61: 4C 8B A4 24 F0 02 00 00  - mov r12,[rsp+000002F0]
+Cyberpunk2077.exe+2CA4B69: 48 85 C0                 - test rax,rax
+Cyberpunk2077.exe+2CA4B6C: 0F 84 36 01 00 00        - je Cyberpunk2077.exe+2CA4CA8
+Cyberpunk2077.exe+2CA4B72: 48 8D 55 00              - lea rdx,[rbp+00]
+Cyberpunk2077.exe+2CA4B76: 48 8B C8                 - mov rcx,rax
+Cyberpunk2077.exe+2CA4B79: E8 02 B7 55 FD           - call Cyberpunk2077.exe+200280
+Cyberpunk2077.exe+2CA4B7E: 48 8B 08                 - mov rcx,[rax]
+Cyberpunk2077.exe+2CA4B81: 48 89 4D F0              - mov [rbp-10],rcx
+Cyberpunk2077.exe+2CA4B85: 48 8B 48 08              - mov rcx,[rax+08]
+Cyberpunk2077.exe+2CA4B89: 48 89 4D F8              - mov [rbp-08],rcx
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>282</ID>
+          <Description>"Ghost Mode"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ghost,Cyberpunk2077.exe,48 8B C4 4C 89 40 18 48 89 48 08 55 41 57 48 8D A8 38)
+ghost:
+  db 48 31 C0 C3
+registersymbol(ghost)
+
+[DISABLE]
+ghost:
+  db 48 8B C4 4C
+unregistersymbol(ghost)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+190B510
+
+Cyberpunk2077.exe+190B506: CC                    - int 3 
+Cyberpunk2077.exe+190B507: CC                    - int 3 
+Cyberpunk2077.exe+190B508: CC                    - int 3 
+Cyberpunk2077.exe+190B509: CC                    - int 3 
+Cyberpunk2077.exe+190B50A: CC                    - int 3 
+Cyberpunk2077.exe+190B50B: CC                    - int 3 
+Cyberpunk2077.exe+190B50C: CC                    - int 3 
+Cyberpunk2077.exe+190B50D: CC                    - int 3 
+Cyberpunk2077.exe+190B50E: CC                    - int 3 
+Cyberpunk2077.exe+190B50F: CC                    - int 3 
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+190B510: 48 8B C4              - mov rax,rsp
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+190B513: 4C 89 40 18           - mov [rax+18],r8
+Cyberpunk2077.exe+190B517: 48 89 48 08           - mov [rax+08],rcx
+Cyberpunk2077.exe+190B51B: 55                    - push rbp
+Cyberpunk2077.exe+190B51C: 41 57                 - push r15
+Cyberpunk2077.exe+190B51E: 48 8D A8 38 FF FF FF  - lea rbp,[rax-000000C8]
+Cyberpunk2077.exe+190B525: 48 81 EC B8 01 00 00  - sub rsp,000001B8
+Cyberpunk2077.exe+190B52C: 48 89 58 10           - mov [rax+10],rbx
+Cyberpunk2077.exe+190B530: 48 8D 54 24 78        - lea rdx,[rsp+78]
+Cyberpunk2077.exe+190B535: 48 89 70 E8           - mov [rax-18],rsi
+Cyberpunk2077.exe+190B539: 48 89 78 E0           - mov [rax-20],rdi
+}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"Inf. Weight"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{$lua}
+if syntaxcheck then return end
+
+[ENABLE]
+function setWeightToZero()
+  local weight="[[[[[[[PhysX3_x64.dll+25D5D8]+8]+0]+8]+1F8]+188]+38]+498"
+  local weightCheck=readFloat(weight)
+
+  if weightCheck~=nil then
+    writeFloat(weight,0)
+  end
+end
+
+function timer()
+  t=createTimer()
+  t.OnTimer=setWeightToZero
+  t.Interval=10
+  t.Enabled=true
+end
+
+timer()
+
+[DISABLE]
+t.destroy()
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>457</ID>
+          <Description>"Free Crafting"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(freeCraft,Cyberpunk2077.exe,0F B7 41 4B 0F B6 51 4D 66 89 44 24 08 4D 85 C0 74 23)
+alloc(newmem,$1000,freeCraft)
+
+label(code)
+label(return)
+
+newmem:
+  test r8,r8
+  je code
+  mov dword ptr [r8],0
+  xor r8,r8
+code:
+  movzx eax,word ptr [rcx+4B]
+  movzx edx,byte ptr [rcx+4D]
+  jmp return
+
+freeCraft:
+  jmp newmem
+  nop 3
+return:
+registersymbol(freeCraft)
+
+[DISABLE]
+freeCraft:
+  db 0F B7 41 4B 0F B6 51 4D
+unregistersymbol(freeCraft)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+C6E053
+
+Cyberpunk2077.exe+C6E047: CC              - int 3 
+Cyberpunk2077.exe+C6E048: CC              - int 3 
+Cyberpunk2077.exe+C6E049: CC              - int 3 
+Cyberpunk2077.exe+C6E04A: CC              - int 3 
+Cyberpunk2077.exe+C6E04B: CC              - int 3 
+Cyberpunk2077.exe+C6E04C: CC              - int 3 
+Cyberpunk2077.exe+C6E04D: CC              - int 3 
+Cyberpunk2077.exe+C6E04E: CC              - int 3 
+Cyberpunk2077.exe+C6E04F: CC              - int 3 
+Cyberpunk2077.exe+C6E050: 48 FF 02        - inc [rdx]
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+C6E053: 0F B7 41 4B     - movzx eax,word ptr [rcx+4B]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+C6E057: 0F B6 51 4D     - movzx edx,byte ptr [rcx+4D]
+Cyberpunk2077.exe+C6E05B: 66 89 44 24 08  - mov [rsp+08],ax
+Cyberpunk2077.exe+C6E060: 4D 85 C0        - test r8,r8
+Cyberpunk2077.exe+C6E063: 74 23           - je Cyberpunk2077.exe+C6E088
+Cyberpunk2077.exe+C6E065: 0F B6 C8        - movzx ecx,al
+Cyberpunk2077.exe+C6E068: 0F B6 44 24 09  - movzx eax,byte ptr [rsp+09]
+Cyberpunk2077.exe+C6E06D: C1 E1 08        - shl ecx,08
+Cyberpunk2077.exe+C6E070: 0B C8           - or ecx,eax
+Cyberpunk2077.exe+C6E072: 0F B6 C2        - movzx eax,dl
+Cyberpunk2077.exe+C6E075: C1 E1 08        - shl ecx,08
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"Player Stats {Go to Stats Screen}"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(PlrStats,Cyberpunk2077.exe,41 8B 00 89 02 C3)
+alloc(newmem,$1000,PlrStats)
+
+label(code)
+label(return)
+
+newmem:
+  pushf
+  cmp r10d,1
+  jne @f
+  push rax
+  mov rax,10000000000
+  cmp r8,rax
+  pop rax
+  jl @f
+  mov [newmem+620],r8 // Perk Points
+  @@:
+  cmp r10d,1A
+  jne @f
+  cmp r13d,0
+  je @f
+  cmp [rbp+10],B
+  jne @f
+  mov [newmem+600],r8 // Experience Points
+  @@:
+  popf
+
+code:
+  mov eax,[r8]
+  mov [rdx],eax
+  jmp return
+
+PlrStats:
+  jmp newmem
+return:
+registersymbol(PlrStats newmem)
+
+[DISABLE]
+
+PlrStats:
+  db 41 8B 00 89 02
+
+unregistersymbol(PlrStats newmem)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.AK::WriteBytesMem::Size+7FE0
+
+Cyberpunk2077.AK::WriteBytesMem::Size+7FD6: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FD7: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FD8: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FD9: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDA: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDB: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDC: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDD: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDE: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FDF: CC        - int 3 
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE0: 41 8B 00  - mov eax,[r8]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE3: 89 02     - mov [rdx],eax
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE5: C3        - ret 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE6: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE7: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE8: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FE9: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FEA: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FEB: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FEC: CC        - int 3 
+Cyberpunk2077.AK::WriteBytesMem::Size+7FED: CC        - int 3 
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>37</ID>
+          <Description>"Experience"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>[newmem+600]</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"Attribute Points"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>[newmem+620]-C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"Perk Points"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>[newmem+620]</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"Street Cred"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>[newmem+600]+38</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>458</ID>
+      <Description>"Experience Ptrs {Go to Character Screen}"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(perks,Cyberpunk2077.exe,48 8B 12 4C 8D 44 24 30 48)
+alloc(newmem,$1000,perks)
+
+label(code)
+label(return)
+label(perksPtr)
+
+newmem:
+  mov r8,perksPtr
+  mov [r8],rdx
+code:
+  mov rdx,[rdx]
+  lea r8,[rsp+30]
+  jmp return
+
+perksPtr:
+  dq 0
+
+perks:
+  jmp newmem
+  nop 3
+return:
+registersymbol(perks)
+registersymbol(perksPtr)
+
+[DISABLE]
+perks:
+  db 48 8B 12 4C 8D 44 24 30
+unregistersymbol(perks)
+unregistersymbol(perksPtr)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+18F6229
+
+Cyberpunk2077.exe+18F6203: 48 8B DA           - mov rbx,rdx
+Cyberpunk2077.exe+18F6206: F3 0F 7F 44 24 30  - movdqu [rsp+30],xmm0
+Cyberpunk2077.exe+18F620C: 4C 3B C0           - cmp r8,rax
+Cyberpunk2077.exe+18F620F: 74 18              - je Cyberpunk2077.exe+18F6229
+Cyberpunk2077.exe+18F6211: 49 8B 40 08        - mov rax,[r8+08]
+Cyberpunk2077.exe+18F6215: 49 89 48 08        - mov [r8+08],rcx
+Cyberpunk2077.exe+18F6219: 48 89 44 24 38     - mov [rsp+38],rax
+Cyberpunk2077.exe+18F621E: 49 8B 00           - mov rax,[r8]
+Cyberpunk2077.exe+18F6221: 48 89 44 24 30     - mov [rsp+30],rax
+Cyberpunk2077.exe+18F6226: 49 89 08           - mov [r8],rcx
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+18F6229: 48 8B 12           - mov rdx,[rdx]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+18F622C: 4C 8D 44 24 30     - lea r8,[rsp+30]
+Cyberpunk2077.exe+18F6231: 48 89 4C 24 28     - mov [rsp+28],rcx
+Cyberpunk2077.exe+18F6236: 45 33 C9           - xor r9d,r9d
+Cyberpunk2077.exe+18F6239: 48 89 4C 24 20     - mov [rsp+20],rcx
+Cyberpunk2077.exe+18F623E: 48 8D 4C 24 40     - lea rcx,[rsp+40]
+Cyberpunk2077.exe+18F6243: E8 A8 A1 97 FE     - call Cyberpunk2077.exe+2703F0
+Cyberpunk2077.exe+18F6248: 48 8B 4B 08        - mov rcx,[rbx+08]
+Cyberpunk2077.exe+18F624C: 48 8D 54 24 40     - lea rdx,[rsp+40]
+Cyberpunk2077.exe+18F6251: 45 33 C0           - xor r8d,r8d
+Cyberpunk2077.exe+18F6254: E8 07 F2 92 FE     - call Cyberpunk2077.AK::WriteBytesMem::Count+5690
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>286</ID>
+          <Description>"Enable Me"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>perksPtr</Address>
+          <Offsets>
+            <Offset>0</Offset>
+            <Offset>38</Offset>
+            <Offset>0</Offset>
+            <Offset>0</Offset>
+            <Offset>38</Offset>
+            <Offset>0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>291</ID>
+              <Description>"Attributes"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+38</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>298</ID>
+                  <Description>"Body"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4*10+04</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>297</ID>
+                  <Description>"Reflexes"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+3*10+04</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>299</ID>
+                  <Description>"Technical Ability"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+5*10+04</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>296</ID>
+                  <Description>"Intelligence"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+2*10+04</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>292</ID>
+                  <Description>"Cool"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0*10+04</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>459</ID>
+              <Description>"Perks"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+28</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>461</ID>
+                  <Description>"Athletics"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+1*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>466</ID>
+                  <Description>"Annilhilation"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+6*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>462</ID>
+                  <Description>"Street Brawler"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+2*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>468</ID>
+                  <Description>"Handguns"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>470</ID>
+                  <Description>"Blades"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+A*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>460</ID>
+                  <Description>"Assault"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>465</ID>
+                  <Description>"Crafting"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+5*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>467</ID>
+                  <Description>"Engineering"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+7*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>469</ID>
+                  <Description>"Breach Protocol"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+9*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>464</ID>
+                  <Description>"Quickhacking"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>471</ID>
+                  <Description>"Stealth"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C*1C+10</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>463</ID>
+                  <Description>"Cold Blood"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+3*1C+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>176</ID>
+      <Description>"Inventory Ptrs {Go to Inventory Screen}"</Description>
+      <Options moHideChildren="1"/>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(PlyrInv,Cyberpunk2077.exe,48 8B ?? 48 8B 01 FF 90 ?? ?? ?? ?? 3C 01)
+alloc(newmem,$1000,PlyrInv)
+alloc(InvList,$1000)
+alloc(InvAdd,$1000)
+
+label(PlyrBackpack)
+label(return)
+label(nothing)
+label(ItemQltyOffset)
+label(ExtraQltyOffset)
+
+0078:
+ItemQltyOffset:
+00E8:
+ExtraQltyOffset:
+
+newmem:
+  push rbx
+  mov rbx,InvList
+  xor rdx,rdx
+@@:
+  mov rax,[rbx+rdx]
+  test rax,rax
+  je nothing
+  cmp [rcx+40],eax
+  je @f
+  add rdx,8
+  jmp @b
+@@:
+  mov rbx,InvAdd
+  mov [rbx+rdx],rcx
+nothing:
+  pop rbx
+PlyrBackpack:
+  readmem(PlyrInv,6)
+  jmp return
+
+PlyrInv:
+  jmp newmem
+  nop
+return:
+registersymbol(PlyrInv)
+registersymbol(PlyrBackpack)
+registersymbol(InvList)
+registersymbol(InvAdd)
+registersymbol(ItemQltyOffset)
+registersymbol(ExtraQltyOffset)
+
+InvList:
+dq 0000000BF5E188EC // 0000 money
+dq 000000155AC5B1CB // 0008 common item
+dq 0000001709E636CA // 0010 uncommon item
+dq 000000130181345A // 0018 rare item
+dq 00000013988865E0 // 0020 rare upgrade
+dq 00000013DF810683 // 0028 epic item
+dq 0000001346885739 // 0030 epic upgrade
+dq 00000018A5EC1EA5 // 0038 legendary item
+dq 000000183CE54F1F // 0040 legendary upgrade
+dq 0000002062D7084F // 0048 uncommon quickhack
+dq 0000001C6B7F4DC8 // 0050 rare quickhack
+dq 0000001CB57F7F11 // 0058 epic quickhack
+dq 0000002138555834 // 0060 legendary quickhack
+dq 00000010FE92A980 // 0068 pistol
+dq 0000000E5BEC7BB0 // 0070 rifle
+dq 00000010E490E4AD // 0078 shutgun
+dq 00000014089D1CBC // 0080 sniper rifle
+dq 000000145C1A7DFB // 0088 bounce back mk1
+dq 0000001519DBB192 // 0090 maxdoc mk1
+dq 000000107F736E1B // 0098 oxy booster
+dq 0000001A9710018F // 00A0 capacity booster
+dq 00000017D4DA3AE8 // 00A8 vatnajokull
+dq 00000011022A27DF // 00B0 soy paste
+dq 0000001E49695215 // 00B8 incendiary grenade
+dq 0000001D67D4BA7D // 00C0 biohazard grenade
+dq 00000019D4AB5921 // 00C8 recon grenade
+dq 00000018EDC63EF7 // 00D0 frag grenade
+dq 000000192896D9F8 // 00D8 flashbang grenade
+
+[DISABLE]
+PlyrInv:
+  readmem(PlyrBackpack,6)
+unregistersymbol(PlyrInv)
+unregistersymbol(PlyrBackpack)
+unregistersymbol(InvList)
+unregistersymbol(InvAdd)
+unregistersymbol(ItemQltyOffset)
+unregistersymbol(ExtraQltyOffset)
+dealloc(newmem)
+dealloc(InvList)
+dealloc(InvAdd)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+17B99A3
+
+Cyberpunk2077.exe+17B9976: 48 03 F3                    - add rsi,rbx
+Cyberpunk2077.exe+17B9979: 48 3B DE                    - cmp rbx,rsi
+Cyberpunk2077.exe+17B997C: 0F 84 F0 00 00 00           - je Cyberpunk2077.exe+17B9A72
+Cyberpunk2077.exe+17B9982: 4C 89 7C 24 40              - mov [rsp+40],r15
+Cyberpunk2077.exe+17B9987: 33 FF                       - xor edi,edi
+Cyberpunk2077.exe+17B9989: 4C 89 6C 24 50              - mov [rsp+50],r13
+Cyberpunk2077.exe+17B998E: 4C 89 74 24 48              - mov [rsp+48],r14
+Cyberpunk2077.exe+17B9993: 0F 1F 40 00                 - nop dword ptr [rax+00]
+Cyberpunk2077.exe+17B9997: 66 0F 1F 84 00 00 00 00 00  - nop word ptr [rax+rax+00000000]
+Cyberpunk2077.exe+17B99A0: 48 8B 0B                    - mov rcx,[rbx]
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+17B99A3: 48 8B D5                    - mov rdx,rbp
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+17B99A6: 48 8B 01                    - mov rax,[rcx]
+Cyberpunk2077.exe+17B99A9: FF 90 C0 01 00 00           - call qword ptr [rax+000001C0]
+Cyberpunk2077.exe+17B99AF: 3C 01                       - cmp al,01
+Cyberpunk2077.exe+17B99B1: 0F 85 98 00 00 00           - jne Cyberpunk2077.exe+17B9A4F
+Cyberpunk2077.exe+17B99B7: 41 8B 4C 24 0C              - mov ecx,[r12+0C]
+Cyberpunk2077.exe+17B99BC: 8B C1                       - mov eax,ecx
+Cyberpunk2077.exe+17B99BE: 4C 8B 2B                    - mov r13,[rbx]
+Cyberpunk2077.exe+17B99C1: 4D 8B 04 24                 - mov r8,[r12]
+Cyberpunk2077.exe+17B99C5: 41 8B 54 24 08              - mov edx,[r12+08]
+Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>161</ID>
+          <Description>"Money"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
+          <Offsets>
+            <Offset>ItemQltyOffset</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>160</ID>
+          <Description>"Crafting Components"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>InvAdd</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>163</ID>
+              <Description>"Common Item"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0008</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>164</ID>
+              <Description>"Uncommon Item"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0010</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>165</ID>
+              <Description>"Rare Item"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0018</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>166</ID>
+              <Description>"Rare Upgrade"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0020</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>167</ID>
+              <Description>"Epic Item"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0028</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>168</ID>
+              <Description>"Epic Upgrade"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0030</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>169</ID>
+              <Description>"Legendary Item"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0038</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>170</ID>
+              <Description>"Legendary Upgrade"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0040</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>162</ID>
+          <Description>"Quickhack Components"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>InvAdd</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>171</ID>
+              <Description>"Common"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0048</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>172</ID>
+              <Description>"Uncommon"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0050</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>173</ID>
+              <Description>"Epic"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0058</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>174</ID>
+              <Description>"Legendary"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0060</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>177</ID>
+          <Description>"Ammo"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>InvAdd</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>180</ID>
+              <Description>"Pistol"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0068</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>181</ID>
+              <Description>"Rifle"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0070</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>182</ID>
+              <Description>"Shotgun"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0078</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>183</ID>
+              <Description>"Sniper"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0080</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>184</ID>
+          <Description>"Consumables"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>InvAdd</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>185</ID>
+              <Description>"Bounce Back Mk1"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0088</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>186</ID>
+              <Description>"MaxDoc Mk1"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0090</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>194</ID>
+              <Description>"Oxy Booster"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0098</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>195</ID>
+              <Description>"Capacity Booster"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00A0</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>189</ID>
+          <Description>"Grenades"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>InvAdd</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>190</ID>
+              <Description>"Incendiary"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00B8</Address>
+              <Offsets>
+                <Offset>ItemQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>204</ID>
+              <Description>"Biohazard"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00C0</Address>
+              <Offsets>
+                <Offset>ExtraQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>205</ID>
+              <Description>"Recon"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00C8</Address>
+              <Offsets>
+                <Offset>ExtraQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>206</ID>
+              <Description>"Frag"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00D0</Address>
+              <Offsets>
+                <Offset>ExtraQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>207</ID>
+              <Description>"Flashbang"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+00D8</Address>
+              <Offsets>
+                <Offset>ExtraQltyOffset</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
