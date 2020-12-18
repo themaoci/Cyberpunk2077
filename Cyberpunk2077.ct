@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="34">
+<CheatTable CheatEngineTableVersion="29">
   <CheatEntries>
     <CheatEntry>
       <ID>210</ID>
@@ -377,14 +377,16 @@ code:
 PlrStats:
   jmp newmem
 return:
-registersymbol(PlrStats newmem)
+registersymbol(PlrStats)
+registersymbol(newmem)
 
 [DISABLE]
 
 PlrStats:
   db 41 8B 00 89 02
 
-unregistersymbol(PlrStats newmem)
+unregistersymbol(PlrStats)
+unregistersymbol(newmem)
 dealloc(newmem)
 
 {
@@ -521,15 +523,6 @@ Cyberpunk2077.exe+18F6254: E8 07 F2 92 FE     - call Cyberpunk2077.AK::WriteByte
           <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>perksPtr</Address>
-          <Offsets>
-            <Offset>0</Offset>
-            <Offset>38</Offset>
-            <Offset>0</Offset>
-            <Offset>0</Offset>
-            <Offset>38</Offset>
-            <Offset>0</Offset>
-          </Offsets>
           <CheatEntries>
             <CheatEntry>
               <ID>291</ID>
@@ -538,10 +531,6 @@ Cyberpunk2077.exe+18F6254: E8 07 F2 92 FE     - call Cyberpunk2077.AK::WriteByte
               <LastState Value="" RealAddress="00000000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <GroupHeader>1</GroupHeader>
-              <Address>+38</Address>
-              <Offsets>
-                <Offset>0</Offset>
-              </Offsets>
               <CheatEntries>
                 <CheatEntry>
                   <ID>298</ID>
@@ -587,10 +576,6 @@ Cyberpunk2077.exe+18F6254: E8 07 F2 92 FE     - call Cyberpunk2077.AK::WriteByte
               <LastState Value="" RealAddress="00000000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <GroupHeader>1</GroupHeader>
-              <Address>+28</Address>
-              <Offsets>
-                <Offset>0</Offset>
-              </Offsets>
               <CheatEntries>
                 <CheatEntry>
                   <ID>461</ID>
@@ -823,10 +808,9 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           <ID>160</ID>
           <Description>"Crafting Components"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>163</ID>
@@ -914,10 +898,9 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           <ID>162</ID>
           <Description>"Quickhack Components"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>171</ID>
@@ -965,10 +948,9 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           <ID>177</ID>
           <Description>"Ammo"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>180</ID>
@@ -1016,10 +998,9 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           <ID>184</ID>
           <Description>"Consumables"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>185</ID>
@@ -1067,10 +1048,9 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           <ID>189</ID>
           <Description>"Grenades"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="7FF60E5E2000"/>
+          <LastState Value="" RealAddress="00000000"/>
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
-          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>190</ID>
