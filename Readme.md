@@ -2,7 +2,7 @@
   
   
 - [Cyberpunk2077.ct](https://github.com/themaoci/Cyberpunk2077/blob/main/Cyberpunk2077.ct)
-_Authors: C130s, Sauce_King, Conjure__, ArphonCT_  
+_Authors: C130s, Sauce_King, Conjure__, ArphonCT_, TheMaoci  
 
 - Edit to make Hold Button faster.  
   - Edit file: `Cyberpunk 2077\r6\config\inputContexts.xml`  
