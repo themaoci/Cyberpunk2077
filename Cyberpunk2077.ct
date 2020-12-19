@@ -671,7 +671,7 @@ Cyberpunk2077.exe+18F6254: E8 07 F2 92 FE     - call Cyberpunk2077.AK::WriteByte
       <ID>176</ID>
       <Description>"Inventory Ptrs {Go to Inventory Screen}"</Description>
       <Options moHideChildren="1"/>
-      <LastState/>
+      <LastState Activated="1"/>
       <VariableType>Auto Assembler Script</VariableType>
       <AssemblerScript>[ENABLE]
 aobscanmodule(PlyrInv,Cyberpunk2077.exe,48 8B ?? 48 8B 01 FF 90 ?? ?? ?? ?? 3C 01)
@@ -797,6 +797,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
         <CheatEntry>
           <ID>161</ID>
           <Description>"Money"</Description>
+          <LastState Value="18865809" RealAddress="276919C48C8"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>InvAdd</Address>
@@ -805,16 +806,18 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           </Offsets>
         </CheatEntry>
         <CheatEntry>
-          <ID>160</ID>
+          <ID>490</ID>
           <Description>"Crafting Components"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
+          <LastState Value="2442938448" RealAddress="7FF629C42000"/>
+          <Color>FF0000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>163</ID>
               <Description>"Common Item"</Description>
+              <LastState Value="564639" RealAddress="276919C06F8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0008</Address>
@@ -825,6 +828,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>164</ID>
               <Description>"Uncommon Item"</Description>
+              <LastState Value="671841" RealAddress="276919C2EE8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0010</Address>
@@ -835,6 +839,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>165</ID>
               <Description>"Rare Item"</Description>
+              <LastState Value="889616" RealAddress="276919CA988"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0018</Address>
@@ -845,6 +850,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>166</ID>
               <Description>"Rare Upgrade"</Description>
+              <LastState Value="892233" RealAddress="276919C96F8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0020</Address>
@@ -855,6 +861,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>167</ID>
               <Description>"Epic Item"</Description>
+              <LastState Value="961604" RealAddress="276919C6C38"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0028</Address>
@@ -865,6 +872,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>168</ID>
               <Description>"Epic Upgrade"</Description>
+              <LastState Value="963694" RealAddress="276919CD958"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0030</Address>
@@ -875,6 +883,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>169</ID>
               <Description>"Legendary Item"</Description>
+              <LastState Value="992850" RealAddress="276919C8078"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0038</Address>
@@ -885,6 +894,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>170</ID>
               <Description>"Legendary Upgrade"</Description>
+              <LastState Value="993178" RealAddress="276919CD718"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0040</Address>
@@ -895,16 +905,18 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>162</ID>
+          <ID>491</ID>
           <Description>"Quickhack Components"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
+          <LastState Value="2442938448" RealAddress="7FF629C42000"/>
+          <Color>FF0000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>171</ID>
               <Description>"Common"</Description>
+              <LastState Value="999450" RealAddress="276919CF0F8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0048</Address>
@@ -915,6 +927,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>172</ID>
               <Description>"Uncommon"</Description>
+              <LastState Value="999599" RealAddress="276919C25E8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0050</Address>
@@ -925,6 +938,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>173</ID>
               <Description>"Epic"</Description>
+              <LastState Value="999782" RealAddress="276919C4448"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0058</Address>
@@ -935,6 +949,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>174</ID>
               <Description>"Legendary"</Description>
+              <LastState Value="999975" RealAddress="276919C1118"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0060</Address>
@@ -945,16 +960,18 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>177</ID>
+          <ID>492</ID>
           <Description>"Ammo"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
+          <LastState Value="2442938448" RealAddress="7FF629C42000"/>
+          <Color>FF0000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>180</ID>
               <Description>"Pistol"</Description>
+              <LastState Value="497" RealAddress="276919C2B88"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0068</Address>
@@ -965,6 +982,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>181</ID>
               <Description>"Rifle"</Description>
+              <LastState Value="700" RealAddress="276919C8A98"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0070</Address>
@@ -975,6 +993,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>182</ID>
               <Description>"Shotgun"</Description>
+              <LastState Value="100" RealAddress="276919C8108"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0078</Address>
@@ -985,6 +1004,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>183</ID>
               <Description>"Sniper"</Description>
+              <LastState Value="100" RealAddress="276919C8858"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0080</Address>
@@ -995,16 +1015,18 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>184</ID>
+          <ID>493</ID>
           <Description>"Consumables"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
+          <LastState Value="2442938448" RealAddress="7FF629C42000"/>
+          <Color>FF0000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>185</ID>
               <Description>"Bounce Back Mk1"</Description>
+              <LastState Value="77" RealAddress="276919CB168"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0088</Address>
@@ -1015,6 +1037,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>186</ID>
               <Description>"MaxDoc Mk1"</Description>
+              <LastState Value="194" RealAddress="276919C0E48"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0090</Address>
@@ -1025,6 +1048,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>194</ID>
               <Description>"Oxy Booster"</Description>
+              <LastState Value="8" RealAddress="276919C17D8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+0098</Address>
@@ -1035,6 +1059,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>195</ID>
               <Description>"Capacity Booster"</Description>
+              <LastState Value="3" RealAddress="276919C3638"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00A0</Address>
@@ -1045,16 +1070,18 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>189</ID>
+          <ID>494</ID>
           <Description>"Grenades"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <ShowAsSigned>0</ShowAsSigned>
-          <GroupHeader>1</GroupHeader>
+          <LastState Value="2442938448" RealAddress="7FF629C42000"/>
+          <Color>FF0000</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>InvAdd</Address>
           <CheatEntries>
             <CheatEntry>
               <ID>190</ID>
               <Description>"Incendiary"</Description>
+              <LastState Value="1813804224" RealAddress="2768F4486D8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00B8</Address>
@@ -1065,6 +1092,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>204</ID>
               <Description>"Biohazard"</Description>
+              <LastState Value="10" RealAddress="2768F446678"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00C0</Address>
@@ -1075,6 +1103,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>205</ID>
               <Description>"Recon"</Description>
+              <LastState Value="14" RealAddress="2768F447398"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00C8</Address>
@@ -1085,6 +1114,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>206</ID>
               <Description>"Frag"</Description>
+              <LastState Value="97" RealAddress="2768F4460D8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00D0</Address>
@@ -1095,6 +1125,7 @@ Cyberpunk2077.exe+17B99CA: C1 E0 04                    - shl eax,04
             <CheatEntry>
               <ID>207</ID>
               <Description>"Flashbang"</Description>
+              <LastState Value="5" RealAddress="2768F446498"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>+00D8</Address>
