@@ -9,6 +9,7 @@ _Authors: C130s, Sauce_King, Conjure__, ArphonCT_, TheMaoci
     - `disassemble_item` -> 0.01 (removes the timer of holding button to disassemble)
     - `craft_item` -> 0.01 (removes the timer of crafting item)
     - `use_item` -> 0.01 (removes the timer of using item)
+  - File to copy paste (dissasemble and craft) [inputContexts.xml](https://github.com/themaoci/Cyberpunk2077/blob/main/inputContexts.xml)
 
 - Slow Forward Motion (60% of W key)
   - Edit file `Cyberpunk 2077\r6\config\inputUserMappings.xml`
