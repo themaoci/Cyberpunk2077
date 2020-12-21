@@ -20,7 +20,4 @@ _Authors: C130s, Sauce_King, Conjure__, ArphonCT_, TheMaoci
     - `Acceleration_Axis_Tank` -> ADD -> `<button id="IK_X" val="0.6" overridableUI="vehicleAccelerate"/>` (IK_X - means X key on keyboard)
 
 - Performance Tweaks.
-  - (Fixing Ram and VRam pools](https://www.nexusmods.com/cyberpunk2077/mods/208?tab=files) (Choose proper file coresponding to your ram value and vram value and replace files in `Cyberpunk 2077\engine\config\memory_pool_budgets.csv`
-  - this method isnt working for older win 10 with threadripper and 2080 Super what i found is to zero everything just replacing all values with `0` to let game choose dynamickly how much it needs and then set `PoolCPU` to half of your ram capacity for 32GB Ram it is `16384MB`
-  - AMD Multithreating fix: 
-    Replace `75 30 33 C9 B8 01 00 00 00 0F A2 8B C8 C1 F9 08` with `EB 30 33 C9 B8 01 00 00 00 0F A2 8B C8 C1 F9 08` in `Cyberpunk 2077\bin\x64\Cyberpunk2077.exe` using any hex editor (best way will be to search and replace any occurance)
+  - 1.05 patch fixed those issues (multithreating, pool utilizations)
