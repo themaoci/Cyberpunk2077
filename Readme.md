@@ -22,6 +22,7 @@ _Authors: C130s, Sauce_King, Conjure__, ArphonCT_, TheMaoci
     - `Acceleration_Axis_Tank` -> ADD -> `<button id="IK_X" val="0.6" overridableUI="vehicleAccelerate"/>` (IK_X - means X key on keyboard)
 
 - Tweaks.
+  - [Cyber engine tweaks](https://www.nexusmods.com/cyberpunk2077/mods/107)
   - [Better controls menu](https://www.nexusmods.com/cyberpunk2077/mods/102)
   - [Boost Drawing Distance](https://www.nexusmods.com/cyberpunk2077/mods/238)
 
