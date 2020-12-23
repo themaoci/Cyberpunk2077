@@ -4,6 +4,8 @@
 - [Cyberpunk2077.ct](https://github.com/themaoci/Cyberpunk2077/blob/main/Cyberpunk2077.ct)
 _Authors: C130s, Sauce_King, Conjure__, ArphonCT_, TheMaoci  
 
+- [Cyberpunk2077_v2.ct](https://github.com/themaoci/Cyberpunk2077/blob/main/Cyberpunk2077_v2.ct) - [source](https://www.unknowncheats.me/forum/other-fps-games/430703-cyberpunk-2077-table.html)
+
 - Edit to make Hold Button faster.  
   - Edit file: `Cyberpunk 2077\r6\config\inputContexts.xml`  
     - `disassemble_item` -> 0.01 (removes the timer of holding button to disassemble)
